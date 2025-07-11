@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RoboSpeaker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      height: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-side {
+      width: 50%;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    .right-side {
+      width: 50%;
+      background: linear-gradient(to bottom right, #007bff, #00c6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .input-section input {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-section input:focus {
+      border-color: #007bff;
+    }
+
+    .done-button {
+      background-color: #007bff;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    .done-button:hover {
+      background-color: #0056b3;
+    }
+
+    .icon {
+      font-size: 100px;
+      color: white;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      form {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left-side, .right-side {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+      }
+
+      .icon {
+        font-size: 80px;
+        margin: 20px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form method="POST">
+    <!-- Left Side -->
+    <div class="left-side">
+      <div class="input-section">
+        <input type="text" name="text" placeholder="Enter text..." required>
+      </div>
+      <div>
+        <button class="done-button" type="submit">Done</button>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-side">
+      <!-- Speaker icon (can be replaced with SVG if needed) -->
+      <div class="icon">🔊</div>
+    </div>
+  </form>
+</body>
+</html>
